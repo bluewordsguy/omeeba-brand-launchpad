@@ -61,9 +61,14 @@ function Header() {
 
 function StoreButton({ kind }: { kind: "ios" | "android" }) {
   const isIos = kind === "ios";
+  const href = isIos
+    ? "#"
+    : "https://play.google.com/store/apps/details?id=com.omeeba.app&pcampaignid=web_share";
   return (
     <a
-      href="#"
+      href={href}
+      target={isIos ? undefined : "_blank"}
+      rel={isIos ? undefined : "noopener noreferrer"}
       className="hover-float group inline-flex items-center gap-3 rounded-2xl bg-foreground text-background px-5 py-3.5 min-w-[180px]"
     >
       <span className="shrink-0">
