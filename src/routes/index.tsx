@@ -7,7 +7,10 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Omeeba — A social network for your story" },
-      { name: "description", content: "Omeeba is a mobile-only social network. Download on iOS and Android." },
+      {
+        name: "description",
+        content: "Omeeba is a mobile-only social network. Download on iOS and Android.",
+      },
     ],
   }),
   component: Index,
@@ -18,14 +21,12 @@ const NAV = [
   { id: "terms", label: "Terms" },
   { id: "privacy", label: "Privacy" },
   { id: "about", label: "About" },
-  { id: "nucleus", label: "Nucleus" },
+  { id: "nucleus", label: "Omeeba Nucleus" },
   { id: "contact", label: "Contact" },
 ];
 
 function Wordmark({ className = "" }: { className?: string }) {
-  return (
-    <span className={`font-brand ${className}`}>Omeeba</span>
-  );
+  return <span className={`font-brand ${className}`}>Omeeba</span>;
 }
 
 function SectionLabel({ n, label }: { n: string; label: string }) {
@@ -48,12 +49,14 @@ function Header() {
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {NAV.map((n) => (
-            <a key={n.id} href={`#${n.id}`} className="hover:text-foreground transition-colors">{n.label}</a>
+            <a key={n.id} href={`#${n.id}`} className="hover:text-foreground transition-colors">
+              {n.label}
+            </a>
           ))}
         </nav>
-        <a href="#home" className="hidden md:inline-flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70">
-          Get the app <ArrowUpRight className="h-4 w-4" />
-        </a>
+        {/* <a href="#home" className= "hidden md:inline-flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70">
+           
+        </a> */}
       </div>
     </header>
   );
@@ -75,7 +78,9 @@ function StoreButton({ kind }: { kind: "ios" | "android" }) {
         {isIos ? <Apple className="h-7 w-7" /> : <Play className="h-7 w-7 fill-current" />}
       </span>
       <span className="flex flex-col leading-tight text-left">
-        <span className="text-[10px] tracking-editorial opacity-70">{isIos ? "Download on the" : "Get it on"}</span>
+        <span className="text-[10px] tracking-editorial opacity-70">
+          {isIos ? "Download on the" : "Get it on"}
+        </span>
         <span className="text-base font-semibold">{isIos ? "App Store" : "Google Play"}</span>
       </span>
     </a>
@@ -84,7 +89,10 @@ function StoreButton({ kind }: { kind: "ios" | "android" }) {
 
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20 overflow-hidden"
+    >
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[60vmin] w-[60vmin] rounded-full blur-3xl opacity-30 brand-ember-bg" />
       </div>
@@ -92,12 +100,16 @@ function Hero() {
       <SectionLabel n="01" label="A social network for your story" />
 
       <div className="mt-10 flex flex-col items-center text-center">
-        <img src={logo} alt="Omeeba" className="h-32 w-32 md:h-44 md:w-44 rounded-3xl shadow-[var(--shadow-float)] animate-float" />
+        <img
+          src={logo}
+          alt="Omeeba"
+          className="h-32 w-32 md:h-44 md:w-44 rounded-3xl shadow-[var(--shadow-float)] animate-float"
+        />
         <h1 className="mt-10 font-brand text-7xl md:text-[9rem] leading-none text-foreground">
           Omeeba
         </h1>
         <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground font-display">
-          A mobile-only social network — built to help you hype yourself, share your story, and connect with the world.
+          Built to help you hype yourself, share your story, and connect with the world.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
@@ -105,7 +117,9 @@ function Hero() {
           <StoreButton kind="android" />
         </div>
 
-        <p className="mt-6 text-xs tracking-editorial text-muted-foreground">Available on mobile only</p>
+        <p className="mt-6 text-xs tracking-editorial text-muted-foreground">
+          Available on mobile only
+        </p>
       </div>
     </section>
   );
@@ -140,7 +154,9 @@ function ScrollSection({
       <div className="relative mx-auto max-w-6xl grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4 space-y-6">
           <SectionLabel n={number} label={label} />
-          <h2 className={`font-display text-5xl md:text-6xl leading-[1.05] ${dark ? "text-background" : "text-foreground"}`}>
+          <h2
+            className={`font-display text-5xl md:text-6xl leading-[1.05] ${dark ? "text-background" : "text-foreground"}`}
+          >
             {title}
           </h2>
         </div>
@@ -150,7 +166,9 @@ function ScrollSection({
           >
             <div className="space-y-5 text-[15px] leading-relaxed">
               {body.map((p, i) => (
-                <p key={i} className={dark ? "text-background/80" : "text-foreground/80"}>{p}</p>
+                <p key={i} className={dark ? "text-background/80" : "text-foreground/80"}>
+                  {p}
+                </p>
               ))}
             </div>
           </div>
@@ -172,7 +190,7 @@ const TERMS = [
   "7.3 Permissions You Give to Us. You retain ownership of your content, but grant Omeeba a non-exclusive, royalty-free, worldwide license to host, use, distribute, display, modify, and create derivative works from your content, consistent with your privacy settings. This license ends when you delete your content. You give Omeeba permission to use your username, profile picture, and any content you share in connection with the Service, including potential future features like ads or sponsored content.",
   "8. User Content Responsibility. By posting or uploading any content (including but not limited to photos, videos, writings, polls, or any other material) on Omeeba, you confirm that you are the sole owner of such content, or you have obtained all necessary rights, licenses, or permissions to use and share it. You are fully responsible for the content you post, including its accuracy, legality, and compliance with copyright and intellectual property laws. Omeeba and its operators will not be held liable for any claims, disputes, or damages arising from content uploaded by users.",
   "9. Updating These Terms of Use. We may change our Service and policies, and we may need to make changes to these Terms of Use so that they accurately reflect our Service and policies. Unless otherwise required by law, we will notify you (for example, through our Service) before we make changes and give you an opportunity to review them before they go into effect. If you continue to access or use the Service, you will be bound by the updated Terms. If you do not agree, you can terminate your agreement by deleting your account and no longer accessing or using any part of the Omeeba Service.",
-  "Contact. For questions about these terms, please reach us at qy.omeeba@gmail.com.",
+  "Contact. For questions about these terms, please reach us at support@omeeba.co.in.",
 ];
 
 const PRIVACY = [
@@ -191,7 +209,7 @@ const PRIVACY = [
   "4.1 Legal basis for using your information. We only collect, use, and process your information when we have a clear legal reason to do so. For example, we need your data to provide, maintain, and improve Omeeba. We do not sell your personal information.",
   "4.2 Moving your data globally. Omeeba is designed to work seamlessly for users around the world. This means your information may be transferred across borders — such as if you interact with someone in another country — to provide a safe and reliable service. We use cloud services and other trusted partners to help run Omeeba.",
   "5. Changes To This Privacy Policy. The most current version of this Privacy Policy governs our processing of your personal data, and we may revise this Privacy Policy from time to time as needed. If we make changes that are determined by us to be material, we will provide you notice and an opportunity to review the revised Privacy Policy before you continue to use Omeeba.",
-  "Contact. Questions about your data? Write to qy.omeeba@gmail.com.",
+  "Contact. Questions about your data? Write to support@omeeba.co.in.",
 ];
 
 function About() {
@@ -203,8 +221,7 @@ function About() {
     "Omeeba is built to give you the most out there.",
     "We're focused on delivering multi-level satisfaction for creators and users alike —",
     "a warm space to connect, create, and share yourself,",
-    "your story, and your passions with loved ones",
-    "and people across the globe.",
+    "your story, and your passions with loved ones.",
   ];
   return (
     <section id="about" className="relative py-32 px-6 overflow-hidden">
@@ -218,7 +235,9 @@ function About() {
               <p
                 key={i}
                 className={`font-display leading-tight ${
-                  i < 3 ? "text-3xl md:text-5xl text-foreground" : "text-xl md:text-2xl text-muted-foreground"
+                  i < 3
+                    ? "text-3xl md:text-5xl text-foreground"
+                    : "text-xl md:text-2xl text-muted-foreground"
                 }`}
               >
                 {l}
@@ -233,7 +252,10 @@ function About() {
 
 function Nucleus() {
   return (
-    <section id="nucleus" className="relative py-32 px-6 bg-foreground text-background overflow-hidden">
+    <section
+      id="nucleus"
+      className="relative py-32 px-6 bg-foreground text-background overflow-hidden"
+    >
       <div className="absolute inset-0 -z-0 pointer-events-none">
         <div className="absolute -top-20 right-0 h-[40rem] w-[40rem] rounded-full blur-3xl opacity-40 brand-ember-bg" />
       </div>
@@ -247,16 +269,22 @@ function Nucleus() {
           <h2 className="mt-8 font-brand text-6xl md:text-7xl text-background">Omeeba</h2>
           <h3 className="font-display text-5xl md:text-6xl mt-1 text-background/90">Nucleus</h3>
           <p className="mt-8 text-base md:text-lg text-background/70 max-w-md leading-relaxed">
-            Our annual festival of innovation, partnerships, exhibitions, and unforgettable concerts. A vibrant hub where creativity meets collaboration — shaping tomorrow's culture and connections, every year.
+            Our annual festival of innovation, partnerships, exhibitions, and unforgettable
+            concerts. A vibrant hub where creativity meets collaboration — shaping tomorrow's
+            culture and connections, every year.
           </p>
           <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-background/20 px-5 py-2 text-xs tracking-editorial text-background/70">
             <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.62_0.18_45)] animate-pulse" />
-            Save the date — 2026
+            Dates Announcing Soon
           </div>
         </div>
         <div className="relative flex items-center justify-center">
           <div className="absolute h-80 w-80 rounded-full brand-ember-bg blur-2xl opacity-40" />
-          <img src={nucleus} alt="Omeeba Nucleus" className="relative h-80 md:h-[28rem] w-auto animate-float drop-shadow-2xl" />
+          <img
+            src={nucleus}
+            alt="Omeeba Nucleus"
+            className="relative h-80 md:h-[28rem] w-auto animate-float drop-shadow-2xl"
+          />
         </div>
       </div>
     </section>
@@ -275,10 +303,12 @@ function Contact() {
         </div>
         <div className="md:col-span-7 space-y-8">
           <p className="text-lg text-muted-foreground leading-relaxed font-display">
-            Omeeba is located (virtually) from the heart of Hsp, Punjab, and we're always eager to connect with our users — and new users alike. Feel free to reach out to us via email for any inquiries or assistance.
+            Omeeba is located (virtually) from the heart of Hsp, Punjab, and we're always eager to
+            connect with our users — and new users alike. Feel free to reach out to us via email for
+            any inquiries or assistance.
           </p>
           <a
-            href="mailto:qy.omeeba@gmail.com"
+            href="mailto:hello@omeeba.co.in"
             className="hover-float group inline-flex items-center gap-4 rounded-2xl border border-border bg-card p-6 w-full md:w-auto"
           >
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
@@ -286,7 +316,7 @@ function Contact() {
             </span>
             <span className="flex flex-col text-left">
               <span className="text-xs tracking-editorial text-muted-foreground">Write to us</span>
-              <span className="text-xl font-medium text-foreground">qy.omeeba@gmail.com</span>
+              <span className="text-xl font-medium text-foreground">hello@omeeba.co.in</span>
             </span>
             <ArrowUpRight className="ml-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
           </a>
@@ -296,9 +326,11 @@ function Contact() {
       <footer className="mx-auto max-w-5xl mt-32 pt-10 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground tracking-editorial">
         <div className="flex items-center gap-2">
           <img src={logo} alt="" className="h-5 w-5 rounded" />
-          <span className="font-brand text-base normal-case tracking-normal text-foreground">Omeeba</span>
+          <span className="font-brand text-base normal-case tracking-normal text-foreground">
+            Omeeba
+          </span>
         </div>
-        <span>© {new Date().getFullYear()} Omeeba — Hsp, Punjab</span>
+        <span>© {new Date().getFullYear()} Omeeba Pvt Ltd</span>
       </footer>
     </section>
   );
