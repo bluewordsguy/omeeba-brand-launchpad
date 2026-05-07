@@ -151,5 +151,42 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 }
+
+.font-brand { font-family: "Pacifico", cursive; letter-spacing: 0.02em; }
+.font-display { font-family: "Fraunces", Georgia, serif; font-optical-sizing: auto; }
+.font-sans-pro { font-family: "Inter", system-ui, sans-serif; }
+
+.tracking-editorial { letter-spacing: 0.32em; text-transform: uppercase; }
+
+.scroll-frame {
+  background: var(--card);
+  border: 1px solid var(--brand-line);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-float);
+}
+.scroll-frame-dark {
+  background: var(--brand-ink);
+  color: var(--brand-paper);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-float);
+}
+
+.brand-ember-bg { background: var(--gradient-ember); }
+
+.hover-float { transition: transform 300ms cubic-bezier(.2,.7,.2,1), box-shadow 300ms; }
+.hover-float:hover { transform: translateY(-3px); box-shadow: var(--shadow-float); }
+
+.scrollbox::-webkit-scrollbar { width: 6px; }
+.scrollbox::-webkit-scrollbar-thumb { background: var(--brand-line); border-radius: 999px; }
+.scrollbox-dark::-webkit-scrollbar-thumb { background: oklch(1 0 0 / 0.2); }
+
+@keyframes float-slow {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float { animation: float-slow 6s ease-in-out infinite; }
