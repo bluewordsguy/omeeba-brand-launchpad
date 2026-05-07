@@ -278,7 +278,7 @@ function Contact() {
             Omeeba is located (virtually) from the heart of Hsp, Punjab, and we're always eager to connect with our users — and new users alike. Feel free to reach out to us via email for any inquiries or assistance.
           </p>
           <a
-            href="mailto:hello@omeeba.app"
+            href="mailto:qy.omeeba@gmail.com"
             className="hover-float group inline-flex items-center gap-4 rounded-2xl border border-border bg-card p-6 w-full md:w-auto"
           >
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background">
@@ -286,7 +286,7 @@ function Contact() {
             </span>
             <span className="flex flex-col text-left">
               <span className="text-xs tracking-editorial text-muted-foreground">Write to us</span>
-              <span className="text-xl font-medium text-foreground">hello@omeeba.app</span>
+              <span className="text-xl font-medium text-foreground">qy.omeeba@gmail.com</span>
             </span>
             <ArrowUpRight className="ml-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
           </a>
