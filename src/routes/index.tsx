@@ -161,7 +161,6 @@ function ScrollSection({
 }
 
 const TERMS = [
-const TERMS = [
   "1. Create, Connect, Discover & Share. Omeeba offers a variety of features to help you create, share, and connect with others. We aim to support meaningful interactions and shared experiences that matter to you. Using the data you provide (like posts, interactions, and connections), Omeeba helps you discover and join experiences, communities, and content that align with your interests.",
   "2. Safe and Inclusive Community. We provide tools and features to help our community have positive and inclusive experiences. While Omeeba relies on MongoDB & a Node server to manage content and user data, we take steps to address reports of abuse, violations of our Terms, or harmful behavior. We may use the information you provide to help keep the platform safe and secure. In certain cases, we may share information about misuse or harmful content with law enforcement or other relevant parties as required. You can learn more about this in our Privacy Policy.",
   "3. Innovative Technology for Users. Organizing and managing information for our community is central to Omeeba. We use technologies like Google Firebase, MongoDB, Node.js, and other tools/AI tools to help store, retrieve, and secure data, ensuring the app functions smoothly and reliably for all users. These systems help us maintain the integrity of the Service and support features that let you connect, share, and interact.",
