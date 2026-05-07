@@ -76,10 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Omeeba is a mobile-only social network giving you the most out there. Download on iOS and Android." },
       { name: "author", content: "Omeeba" },
       { property: "og:title", content: "Omeeba — A social network for your story" },
-      { property: "og:description", content: "A warm space to connect, create, and share yourself, your story, and your passions." },
+      { property: "og:description", content: "Omeeba is a mobile-only social network giving you the most out there. Download on iOS and Android." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Omeeba — A social network for your story" },
+      { name: "twitter:description", content: "Omeeba is a mobile-only social network giving you the most out there. Download on iOS and Android." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/59f7f639-7106-4492-98d1-adc10e92189b/id-preview-9b1bba64--5c9a5e69-3632-4ae2-9042-6fff6002afd2.lovable.app-1778151585077.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/59f7f639-7106-4492-98d1-adc10e92189b/id-preview-9b1bba64--5c9a5e69-3632-4ae2-9042-6fff6002afd2.lovable.app-1778151585077.png" },
     ],
     links: [
       {
